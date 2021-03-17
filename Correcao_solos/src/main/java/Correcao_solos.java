@@ -9,53 +9,49 @@
  * @author rick-
  */
 public class Correcao_solos {
-    private static float valorIdealFosforo(int textSolo){
-        float r = 0;
+    private static double valorIdealFosforo(int textSolo){
         if (textSolo == 1){
-            r = 9;
+            return 9;
         }else if (textSolo == 2){
-            r = 12;
+            return 12;
         }
-        return r;
+        return 0;
+
     }
     
-    private static float valorIdealPotassio(int textSolo){
-        float r = 0;
+    private static double valorIdealPotassio(int textSolo){
         if (textSolo == 1){
-            r = 0.35f;
+            return 0.35;
         }else if (textSolo == 2){
-            r = 0.25f;
+            return 0.25;
         }
-        return r;
+        return 0;
     }
     
-    private static float valorIdealCalcio(int textSolo){
-        float r = 0;
+    private static double valorIdealCalcio(int textSolo){
         if (textSolo == 1){
-            r = 6;
+            return 6;
         }else if (textSolo == 2){
-            r = 4;
+            return 4;
         }
-        return r;
+        return 0;
     }
     
-    private static float valorIdealMagnesio(int textSolo){
-        float r = 0;
+    private static double valorIdealMagnesio(int textSolo){
         if (textSolo == 1){
-            r = 1.5f;
+            return 1.5;
         }else if (textSolo == 2){
-            r = 1.0f;
+            return 1.0;
         }
-        return r;
+        return 0;
     }
     
-    private static float valorIdealEnxofre(int textSolo){
-        float r = 0;
+    private static double valorIdealEnxofre(int textSolo){
         if (textSolo == 1){
-            r = 9;
+            return 9;
         }else if (textSolo == 2){
-            r = 6;
+            return 6;
         }
-        return r;
+        return 0;
     }
 }
