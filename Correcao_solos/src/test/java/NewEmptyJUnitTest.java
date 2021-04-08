@@ -74,4 +74,9 @@ public class NewEmptyJUnitTest {
                 )
         );
     }
+    
+    @Test
+    public void testaQuantidadeFosforo() {
+        assertEquals(123.95079365079366, new EquilibrioCorrecaoCTC().quantidadeFosforoAplicar(12, 1, 8.59, 0.7));
+    }
 }
