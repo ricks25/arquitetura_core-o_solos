@@ -1,18 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+import com.mycompany.correcao_solos.CorrecaoFosforo;
 import com.mycompany.correcao_solos.EquilibrioCorrecaoCTC;
 import com.mycompany.correcao_solos.Nutrientes;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- *
- * @author rick-
- */
 public class NewEmptyJUnitTest {
     
     public static final int ARGILOSO = 1;
@@ -76,7 +67,11 @@ public class NewEmptyJUnitTest {
     }
     
     @Test
-    public void testaQuantidadeFosforo() {
-        assertEquals(123.95079365079366, new EquilibrioCorrecaoCTC().quantidadeFosforoAplicar(12, 1, 8.59, 0.7));
+    public void testaCorrecaoFosforo() {
+        CorrecaoFosforo correcaoFosforo = new CorrecaoFosforo(12.0, 1, 8.59, 0.7, 1260.00);
+        
+        assertEquals(123.95079365079366, correcaoFosforo.quantidadeFosforoAplicar());
+        assertEquals(156.178, correcaoFosforo.calculaCusto());
+        assertEquals(12.395079365079365, correcaoFosforo.quantidadeEnxofre());
     }
 }
