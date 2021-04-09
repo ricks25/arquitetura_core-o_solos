@@ -1,4 +1,5 @@
 import com.mycompany.correcao_solos.CorrecaoFosforo;
+import com.mycompany.correcao_solos.CorrecaoPotassio;
 import com.mycompany.correcao_solos.EquilibrioCorrecaoCTC;
 import com.mycompany.correcao_solos.Nutrientes;
 import org.junit.jupiter.api.Test;
@@ -74,5 +75,12 @@ public class NewEmptyJUnitTest {
         assertEquals(156.18, correcaoFosforo.calculaCusto());
         assertEquals(12.4, correcaoFosforo.quantidadeEnxofre());
         assertEquals(34.7, correcaoFosforo.quantidadeCalcio());
+    }
+    
+    @Test
+    public void testaCorrecaoPotassio() {
+        CorrecaoPotassio correcaoPotassio = new CorrecaoPotassio(0.15, 1.63, 5.76, 5.35, 3.0, 1);
+        
+        assertEquals(450.55, correcaoPotassio.quantidadePotassioAplicar());
     }
 }

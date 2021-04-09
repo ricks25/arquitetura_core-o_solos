@@ -29,27 +29,27 @@ public class CorrecaoFosforo {
             case 1:
                 return Math.round(((((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 18) * 100.0) / 100.0;
             case 2:
-                return (((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 41;
+                return Math.round(((((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 41) * 100.0) / 100.0;
             case 3:
-                return (((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 48;
+                return Math.round(((((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 48) * 100.0) / 100.0;
             case 4:
-                return (((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 45;
+                return Math.round(((((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 45) * 100.0) / 100.0;
             case 5:
-                return (((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 18;
+                return Math.round(((((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 18) * 100.0) / 100.0;
             case 6:
-                return (((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 33;
+                return Math.round(((((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 33) * 100.0) / 100.0;
             case 7:
-                return (((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 29;
+                return Math.round(((((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 29) * 100.0) / 100.0;
             case 8:
-                return (((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 32;
+                return Math.round(((((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 32) * 100.0) / 100.0;
             case 9:
-                return (((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 24;
+                return Math.round(((((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 24) * 100.0) / 100.0;
             case 10:
-                return (((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 18.5;
+                return Math.round(((((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 18.5) * 100.0) / 100.0;
             case 11:
-                return (((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 52;
+                return Math.round(((((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 52) * 100.0) / 100.0;
             case 12:
-                return (((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 18;
+                return Math.round(((((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 18) * 100.0) / 100.0;
             default:
                 return 0.0;
         }
