@@ -1,5 +1,8 @@
 package com.mycompany.correcao_solos;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class CorrecaoFosforo {
     private double teorAtingir;
     private int fonteFosforo;
@@ -24,7 +27,7 @@ public class CorrecaoFosforo {
         }
         switch(fonteFosforo) {
             case 1:
-                return (((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 18;
+                return Math.round(((((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 18) * 100.0) / 100.0;
             case 2:
                 return (((x * 2) * 2.29) * 100 / eficienciaFosforo / 100) * 100 / 41;
             case 3:
@@ -53,7 +56,8 @@ public class CorrecaoFosforo {
     }
     
     public double calculaCusto() {
-        return (custoTonelada * (quantidadeFosforoAplicar() * 2.42) / 1000) / 2.42; 
+        BigDecimal bd = new BigDecimal((custoTonelada * (quantidadeFosforoAplicar() * 2.42) / 1000) / 2.42).setScale(2, RoundingMode.HALF_UP);
+        return bd.doubleValue(); 
     }
     
     public double quantidadeEnxofre() {
@@ -67,6 +71,53 @@ public class CorrecaoFosforo {
                 enxofre = ((quantidadeFosforoAplicar() * 2.42) * 0.11) / 2.42;
             }
         }
-        return enxofre;
+        BigDecimal bd = new BigDecimal(enxofre).setScale(1, RoundingMode.HALF_UP);
+        return bd.doubleValue();
+    }
+    
+    public double quantidadeCalcio() {
+        double calcio;
+        switch(fonteFosforo) {
+            case 1:
+                calcio = (((quantidadeFosforoAplicar() * 2.42)* 0.28) / 2.42);
+                break;
+            case 2:
+                calcio = (((quantidadeFosforoAplicar() * 2.42)* 0.2) / 2.42);
+                break;
+            case 3:
+                calcio = (((quantidadeFosforoAplicar() * 2.42)* 0.09) / 2.42);
+                break;
+            case 4:
+                calcio = (((quantidadeFosforoAplicar() * 2.42)* 0.16) / 2.42);
+                break;
+            case 5:
+                calcio = (((quantidadeFosforoAplicar() * 2.42)* 0.28) / 2.42);
+                break;
+            case 6:
+                calcio = (((quantidadeFosforoAplicar() * 2.42)* 0.52) / 2.42);
+                break;
+            case 7:
+                calcio = (((quantidadeFosforoAplicar() * 2.42)* 0.52) / 2.42);
+                break;
+            case 8:
+                calcio = (((quantidadeFosforoAplicar() * 2.42)* 0.45) / 2.42);
+                break;
+            case 9:
+                calcio = (((quantidadeFosforoAplicar() * 2.42)* 0.28) / 2.42);
+                break;
+            case 10:
+                calcio = (((quantidadeFosforoAplicar() * 2.42)* 0.44) / 2.42);
+                break;
+            case 11:
+                calcio = (((quantidadeFosforoAplicar() * 2.42)* 0) / 2.42);
+                break;
+            case 12:
+                calcio = (((quantidadeFosforoAplicar() * 2.42)* 0.18) / 2.42);
+                break;
+            default:
+                calcio = 0.0;
+        }
+        BigDecimal bd = new BigDecimal(calcio).setScale(1, RoundingMode.HALF_UP);
+        return bd.doubleValue();
     }
 }

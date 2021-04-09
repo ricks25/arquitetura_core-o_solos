@@ -70,8 +70,9 @@ public class NewEmptyJUnitTest {
     public void testaCorrecaoFosforo() {
         CorrecaoFosforo correcaoFosforo = new CorrecaoFosforo(12.0, 1, 8.59, 0.7, 1260.00);
         
-        assertEquals(123.95079365079366, correcaoFosforo.quantidadeFosforoAplicar());
-        assertEquals(156.178, correcaoFosforo.calculaCusto());
-        assertEquals(12.395079365079365, correcaoFosforo.quantidadeEnxofre());
+        assertEquals(123.95, correcaoFosforo.quantidadeFosforoAplicar());
+        assertEquals(156.18, correcaoFosforo.calculaCusto());
+        assertEquals(12.4, correcaoFosforo.quantidadeEnxofre());
+        assertEquals(34.7, correcaoFosforo.quantidadeCalcio());
     }
 }
