@@ -79,8 +79,9 @@ public class NewEmptyJUnitTest {
     
     @Test
     public void testaCorrecaoPotassio() {
-        CorrecaoPotassio correcaoPotassio = new CorrecaoPotassio(0.15, 1.63, 5.76, 5.35, 3.0, 1);
+        CorrecaoPotassio correcaoPotassio = new CorrecaoPotassio(0.15, 1.63, 5.76, 5.35, 3.0, 1, 2500.00);
         
         assertEquals(450.55, correcaoPotassio.quantidadePotassioAplicar());
+        assertEquals(1126.37, correcaoPotassio.calculaCusto());
     }
 }

@@ -4,16 +4,17 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class CorrecaoPotassio {
-    private double potassioSolo, magnesioSolo, calcioSolo, hidrogenioAluminioSolo, potassioDesejado;
+    private double potassioSolo, magnesioSolo, calcioSolo, hidrogenioAluminioSolo, potassioDesejado, custoTonelada;
     private int fontePotassio;
     
-    public CorrecaoPotassio(double potassioSolo, double magnesioSolo, double calcioSolo, double hidrogenioAluminioSolo, double potassioDesejado, int fontePotassio) {
+    public CorrecaoPotassio(double potassioSolo, double magnesioSolo, double calcioSolo, double hidrogenioAluminioSolo, double potassioDesejado, int fontePotassio, double custoTonelada) {
         this.potassioSolo = potassioSolo;
         this.magnesioSolo = magnesioSolo;
         this.calcioSolo = calcioSolo;
         this.hidrogenioAluminioSolo = hidrogenioAluminioSolo;
         this.potassioDesejado = potassioDesejado;
         this.fontePotassio = fontePotassio;
+        this.custoTonelada = custoTonelada;
     }
     
     public double quantidadePotassioAplicar() {
@@ -41,5 +42,10 @@ public class CorrecaoPotassio {
         }
         BigDecimal bd = new BigDecimal(potassio).setScale(2, RoundingMode.HALF_UP);
         return bd.doubleValue();
+    }
+    
+    public double calculaCusto() {
+        BigDecimal bd = new BigDecimal((custoTonelada * quantidadePotassioAplicar() * 2.42 / 1000) / 2.42).setScale(2, RoundingMode.HALF_DOWN);
+        return bd.doubleValue(); 
     }
 }
